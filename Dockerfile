@@ -3,8 +3,8 @@ FROM docker.io/yaamai/aio-ray-devcontainer:base
 
 WORKDIR /home/vscode/airgapped-devcontainer
 COPY requirements.txt . 
-RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
-RUN npm -g install leaflet leaflet-editable pmtiles protomaps-leaflet
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt && mkdir -p pips && cd pips && pip download -r ../requirements.txt
+RUN npm -g install leaflet leaflet-editable pmtiles protomaps-leaflet stepci leaflet.utm @json-editor/json-editor leaflet-groupedlayercontrol leaflet-geojson-selector leaflet-path-drag leaflet-snap @jjwtay/leaflet.draw-ellipse
 RUN TEMP_DEB=$(mktemp) && wget -qO "${TEMP_DEB}" https://gitlab.com/gitlab-org/cli/-/releases/v1.43.0/downloads/glab_1.43.0_Linux_x86_64.deb && dpkg -i ${TEMP_DEB} && rm -f ${TEMP_DEB}
 RUN apt-get update && apt-get install -y cloc g++ vim && apt-get clean && rm -rf  /var/lib/apt/lists/*
 

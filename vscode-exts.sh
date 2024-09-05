@@ -12,6 +12,7 @@ extensions=(
   "ms-vscode.remote-explorer@0.4.1"  
   "ms-vscode.remote-server@1.5.0"
   "hediet.vscode-drawio@1.6.6"
+  "redhat.vscode-yaml@1.15.0"
 )
 
 mkdir -p downloads/extensions

@@ -9,6 +9,7 @@
                 "cudnnVersion": "8.9.7.29"
             },
             "ghcr.io/devcontainers/features/node:1": {},
+            "ghcr.io/devcontainers/features/git-lfs:1": {},
             "./bundle-vscode-exts": {},
             "./bundle-vscode": {}
     },
